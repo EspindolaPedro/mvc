@@ -29,7 +29,7 @@
                             <img src="<?=$base;?>/media/avatars/<?=$loggedUser->avatar;?>" />
                         </div>
                     </a>
-                    <a href="<?=$base;?>" class="user-logout">
+                    <a href="<?=$base;?>/sair" class="user-logout">
                         <img src="<?=$base;?>/assets/images/power_white.png" />
                     </a>
                 </div>
