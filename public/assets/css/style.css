@@ -390,6 +390,7 @@ header .head-side {
 }
 .full-user-photos .user-photo-item {
     margin:0;
+    max-width:100%;
 }
 .feed-pagination a {
     display: inline-block;
@@ -506,4 +507,26 @@ header .head-side {
     }
 
 }
+a, li {
+    list-style: none;
+    text-decoration: none;
+}
 
+.config-file {
+    display: flex;
+    flex-direction: column;
+}
+img.image-edit {
+    max-width: 25%;
+}
+.config-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;  
+
+}
+
+.config-form .button {
+    align-self: flex-start;
+}

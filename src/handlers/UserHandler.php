@@ -61,6 +61,7 @@ class UserHandler {
             $user->birthdate = $data['birthdate'];
             $user->city = $data['city'];
             $user->work = $data['work'];
+            $user->email = $data['email'];
             $user->cover = $data['cover'];
             $user->avatar = $data['avatar'];
 
@@ -144,6 +145,25 @@ class UserHandler {
             ->where('user_from', $from)
             ->where('user_to', $to)
         ->execute();
+    }
+
+    public static function searchUser($term) {
+        $users = [];
+        $data = User::select()->where('name', 'like', '%'.$term.'%')->get();
+        if($data) {
+            foreach($data as $user) {
+                $newUser = new User();
+                $newUser->id = $user['id'];
+                $newUser->name = $user['name'];
+                $newUser->avatar = $user['avatar'];
+
+                $users[] = $newUser;
+            }
+        }
+        return $users;
+    }
+    public static function updateUser($id, $updates) {
+        User::update($updates)->where('id', $id)->execute();
     }
 
 }
