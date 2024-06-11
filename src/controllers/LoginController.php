@@ -33,7 +33,6 @@ class LoginController extends Controller {
         } else {
             $this->redirect('/login');
         }
-
     }
     public function signup() { 
         $flash = '';
@@ -45,7 +44,6 @@ class LoginController extends Controller {
             'flash' => $flash
         ]);
     }
-
     public function signupAction() {
         $name = filter_input(INPUT_POST, 'name');
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -56,15 +54,13 @@ class LoginController extends Controller {
             $birthdate = explode( '/', $birthdate );
             if( count($birthdate) != 3 ){
                 $_SESSION['flash'] = 'Data de nascimento inválida.';
-                $this->redirect('/cadastro');
-               
+                $this->redirect('/cadastro');               
             }
                 $birthdate = $birthdate[2].'-'.$birthdate[1].'-'.$birthdate[0]; //formato de data internacional
                 if( strtotime($birthdate) === false ){
                     $_SESSION['flash'] = 'Data de nascimento inválida.';
                     $this->redirect('/cadastro');
                 }
-
                     if(UserHandler::emailExists($email) === false){
                         $token = UserHandler::addUser($name, $email, $password, $birthdate);
                         $_SESSION['token'] = $token;
@@ -73,11 +69,9 @@ class LoginController extends Controller {
                         $_SESSION['flash'] = "Este email já está cadastrado.";
                         $this->redirect('/cadastro');
                     }
-
         } else {
             $this->redirect('/cadastro');
         }
-
     }
     public function logout() {
         $_SESSION['token'] = "";

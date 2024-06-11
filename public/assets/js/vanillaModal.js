@@ -370,7 +370,6 @@ var VanillaModal = (function () {
       configurable: true
     },
     _events: {
-
       /**
        * @private {Function} add
        */
@@ -394,7 +393,6 @@ var VanillaModal = (function () {
           document.removeEventListener("click", _delegateOpen);
           document.removeEventListener("click", _delegateClose);
         };
-
         return {
           add: add.bind(this)
         };

@@ -511,7 +511,6 @@ a, li {
     list-style: none;
     text-decoration: none;
 }
-
 .config-file {
     display: flex;
     flex-direction: column;
@@ -526,7 +525,6 @@ img.image-edit {
     gap: 10px;  
 
 }
-
 .config-form .button {
     align-self: flex-start;
 }

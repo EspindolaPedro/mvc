@@ -14,7 +14,6 @@ class PostController extends Controller {
         if( $this->loggedUser === false ) {
             $this->redirect('/login');
         }
-
     }
     public function new() {
 
@@ -27,7 +26,6 @@ class PostController extends Controller {
                 $body
             );
         }
-
         $this->redirect('/');
     }
 
