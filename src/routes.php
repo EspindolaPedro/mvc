@@ -1,5 +1,6 @@
 <?php
 use core\Router;
+use src\controllers\AjaxController;
 
 $router = new Router();
 
@@ -27,6 +28,9 @@ $router->get('/sair', 'LoginController@logout');
 
 $router->post('/config', 'ConfigController@configUpdate');
 $router->get('/config', 'ConfigController@config');
+
+$router->get('/ajax/like/{id}', 'AjaxController@like');
+$router->post('/ajax/comment', 'AjaxController@comment');
 
 // $router->get('/pesquisa');
 // $router->get('/amigos');
